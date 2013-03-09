@@ -23,6 +23,7 @@ namespace AnimeRSS
             this.numericUpDown1.Value = WindowForm.maxItems;
             this.removeLowresSetting.Checked = WindowForm.removeLowres;
             this.toolTipSetting.Checked = WindowForm.showToolTip;
+            this.removeMess.Checked = WindowForm.removeOtherMess;
         }
 
         private void formattingSetting_CheckedChanged(object sender, EventArgs e)
@@ -87,6 +88,11 @@ namespace AnimeRSS
         private void toolTipSetting_CheckedChanged(object sender, EventArgs e)
         {
             WindowForm.showToolTip = this.toolTipSetting.Checked;
+        }
+
+        private void removeMess_CheckedChanged(object sender, EventArgs e)
+        {
+            WindowForm.removeOtherMess = this.removeMess.Checked;
         }
     }
 }

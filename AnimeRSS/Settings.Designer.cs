@@ -42,6 +42,7 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.removeLowresSetting = new System.Windows.Forms.CheckBox();
             this.toolTipSetting = new System.Windows.Forms.CheckBox();
+            this.removeMess = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +115,7 @@
             this.fontButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
             this.fontButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.fontButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fontButton.Location = new System.Drawing.Point(109, 189);
+            this.fontButton.Location = new System.Drawing.Point(109, 214);
             this.fontButton.Name = "fontButton";
             this.fontButton.Size = new System.Drawing.Size(71, 23);
             this.fontButton.TabIndex = 6;
@@ -129,7 +130,7 @@
             this.fontSetting.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
             this.fontSetting.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.fontSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fontSetting.Location = new System.Drawing.Point(28, 189);
+            this.fontSetting.Location = new System.Drawing.Point(28, 214);
             this.fontSetting.Name = "fontSetting";
             this.fontSetting.Size = new System.Drawing.Size(75, 23);
             this.fontSetting.TabIndex = 7;
@@ -191,11 +192,23 @@
             this.toolTipSetting.UseVisualStyleBackColor = true;
             this.toolTipSetting.CheckedChanged += new System.EventHandler(this.toolTipSetting_CheckedChanged);
             // 
+            // removeMess
+            // 
+            this.removeMess.AutoSize = true;
+            this.removeMess.Location = new System.Drawing.Point(12, 184);
+            this.removeMess.Name = "removeMess";
+            this.removeMess.Size = new System.Drawing.Size(139, 17);
+            this.removeMess.TabIndex = 12;
+            this.removeMess.Text = "Remove all \"[text]\" mess";
+            this.removeMess.UseVisualStyleBackColor = true;
+            this.removeMess.CheckedChanged += new System.EventHandler(this.removeMess_CheckedChanged);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(192, 220);
+            this.ClientSize = new System.Drawing.Size(192, 245);
+            this.Controls.Add(this.removeMess);
             this.Controls.Add(this.toolTipSetting);
             this.Controls.Add(this.removeLowresSetting);
             this.Controls.Add(this.numericUpDown1);
@@ -241,6 +254,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.CheckBox removeLowresSetting;
         private System.Windows.Forms.CheckBox toolTipSetting;
+        private System.Windows.Forms.CheckBox removeMess;
 
     }
 }

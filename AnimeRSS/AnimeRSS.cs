@@ -32,6 +32,7 @@ namespace AnimeRSS
         public static int maxItems = 30;
         public static bool removeLowres = false;
         public static bool showToolTip = false;
+        public static bool removeOtherMess = true;
 
         public WindowForm()
         {
@@ -148,6 +149,7 @@ namespace AnimeRSS
                 s.WriteElementString("maxItems", Convert.ToString(maxItems));
                 s.WriteElementString("removeLowres", removeLowres.ToString());
                 s.WriteElementString("showToolTip", showToolTip.ToString());
+                s.WriteElementString("removeOtherMess", removeOtherMess.ToString());
                 s.WriteEndElement();
             s.Close();
         }
@@ -198,7 +200,8 @@ namespace AnimeRSS
                                    fontSize = x.Element("fontSize").Value,
                                    maxItems = x.Element("maxItems").Value,
                                    removeLowres = x.Element("removeLowres").Value,
-                                   showToolTip = x.Element("showToolTip").Value
+                                   showToolTip = x.Element("showToolTip").Value,
+                                   removeMess = x.Element("removeOtherMess").Value
                                };
 
                 foreach (var item in settings)
@@ -217,6 +220,7 @@ namespace AnimeRSS
                     maxItems = Convert.ToInt32(item.maxItems);
                     removeLowres = Convert.ToBoolean(item.removeLowres);
                     showToolTip = Convert.ToBoolean(item.showToolTip);
+                    removeOtherMess = Convert.ToBoolean(item.removeMess);
                 }              
             }
         }
@@ -252,6 +256,7 @@ namespace AnimeRSS
             if (formattingEnabled) { FormatFeedItems(); }
             if (hashHidingEnabled) { RemoveHash(); }
             if (prefixItemDate) { PrefixDate(); }
+            if (removeOtherMess) { RemoveOtherMess(); }
             this.ShowInTaskbar = showOnTaskbar;
         }
 
@@ -469,6 +474,26 @@ namespace AnimeRSS
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
+        }
+
+        private void RemoveOtherMess()
+        {
+            foreach (Feed f in feeds)
+            {
+                foreach (FeedItem fi in f.GetItems)
+                {
+                    string newTitle = fi.Title;
+
+                    newTitle = Regex.Replace(newTitle, @"\[([^]]+)\]", "");
+                    if (newTitle.Contains("[BD]"))
+                    {
+                        newTitle = newTitle.Replace("[BD]", "");
+                    }
+                    if (fi.Resolution != null) { newTitle += fi.Resolution; }
+
+                    fi.Title = newTitle;
+                }
+            }
         }
     }
 }

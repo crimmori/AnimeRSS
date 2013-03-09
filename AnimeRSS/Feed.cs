@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace AnimeRSS
 {
@@ -45,6 +46,8 @@ namespace AnimeRSS
                        };
 
             foreach (var item in feed) { feedItems.Add(new FeedItem(item.title, item.downloadUrl, item.date, item.description)); }
+
+            SetResolution();
         }
 
         public void RefreshFeed()
@@ -85,6 +88,24 @@ namespace AnimeRSS
 
             this.feedItems = tempList;
         }
+
+        public void SetResolution()
+        {
+            string regularExpression = @"\[(.*?)\]";
+
+            foreach (FeedItem f in this.feedItems)
+            {
+                MatchCollection matches = Regex.Matches(f.Title, @regularExpression);
+
+                foreach (Match m in matches)
+                {
+                    if (m.Value.Contains("1080p")) { f.Resolution = "1080p"; }
+                    if (m.Value.Contains("720p")) { f.Resolution = "720p"; }                  
+                    if (m.Value.Contains("480p")) { f.Resolution = "480p"; }
+                    if (m.Value.Contains("360p")) { f.Resolution = "360p"; }
+                }
+            }
+        }
     }
 
     public class FeedItem
@@ -94,6 +115,7 @@ namespace AnimeRSS
         private string day;
         private string description;
         private string originalTitle;
+        private string resolution;
 
         public FeedItem(string title, string url, string date, string description)
         {
@@ -128,6 +150,12 @@ namespace AnimeRSS
         public string OriginalTitle
         {
             get { return this.originalTitle; }
+        }
+
+        public string Resolution
+        {
+            get { return this.resolution; }
+            set { this.resolution = value; }
         }
     }
 }

@@ -1,0 +1,13 @@
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\bin\Debug\RssFeed2.0.exe.config
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\bin\Debug\RssFeed2.0.exe
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\bin\Debug\RssFeed2.0.pdb
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\obj\Debug\RssFeed2._0.Properties.Resources.resources
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\obj\Debug\RssFeed2.0.csproj.GenerateResource.Cache
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\obj\Debug\RssFeed2.0.exe
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\obj\Debug\RssFeed2.0.pdb
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\obj\Debug\RssFeed2._0.WindowForm.resources
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\obj\Debug\RssFeed2._0.Settings.resources
+F:\School\C#\Projects\RssFeed2.0\RssFeed2.0\obj\Debug\RssFeed2.0.csprojResolveAssemblyReference.cache
+C:\Users\Mitchell\Documents\GitHub\AnimeRSS\RssFeed2.0\bin\Debug\RssFeed2.0.exe.config
+C:\Users\Mitchell\Documents\GitHub\AnimeRSS\RssFeed2.0\obj\Debug\RssFeed2.0.exe
+C:\Users\Mitchell\Documents\GitHub\AnimeRSS\RssFeed2.0\obj\Debug\RssFeed2.0.pdb

@@ -91,7 +91,10 @@ namespace AnimeRSS
                         currentFeedItem = currentFeed.GetItems[hoverIndex];
 
 
-                        itemTooltip.AutomaticDelay = 2000;
+                        itemTooltip.AutomaticDelay = 600000000;
+                        itemTooltip.ReshowDelay = 600000000;
+                        itemTooltip.InitialDelay = 600000000;
+                        itemTooltip.ReshowDelay = 60000000;
                         itemTooltip.SetToolTip(lb, currentFeedItem.Description);
                     }
                 }

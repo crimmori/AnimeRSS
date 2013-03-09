@@ -23,3 +23,13 @@ F:\Personal projects\C#\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.pdb
 C:\Users\Mitchell\Documents\GitHub\Personal-projects\AnimeRSS\AnimeRSS\bin\Debug\AnimeRSS.exe.config
 C:\Users\Mitchell\Documents\GitHub\Personal-projects\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.exe
 C:\Users\Mitchell\Documents\GitHub\Personal-projects\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.pdb
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\bin\Debug\AnimeRSS.exe.config
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.exe
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.pdb
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\bin\Debug\AnimeRSS.exe
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\bin\Debug\AnimeRSS.pdb
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.csprojResolveAssemblyReference.cache
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.WindowForm.resources
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.Properties.Resources.resources
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.Settings.resources
+C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.csproj.GenerateResource.Cache

@@ -38,7 +38,7 @@ namespace AnimeRSS
             InitializeComponent();
             LoadData();
             RefreshF();
-            this.Text = "Anime RSS - " + this.FeedsTabs.TabPages[0].Text;          
+            this.Text = "Anime RSS - " + this.FeedsTabs.TabPages[0].Text;
         }
 
         private void newFeedToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace AnimeRSS
                         currentFeedItem = currentFeed.GetItems[hoverIndex];
 
 
-                        //itemTooltip.ToolTipTitle = currentFeedItem.OriginalTitle;
+                        itemTooltip.AutomaticDelay = 2000;
                         itemTooltip.SetToolTip(lb, currentFeedItem.Description);
                     }
                 }
@@ -467,6 +467,5 @@ namespace AnimeRSS
         {
 
         }
-        
     }
 }

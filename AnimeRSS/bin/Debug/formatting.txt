@@ -1,0 +1,15 @@
+;Put your formatting strings here.
+;Strings entered here will be deleted from the item name.
+;To replace a string with another place them on the same line, seperated by ','.
+;Example: string,replacement
+[Commie]
+[HorribleSubs]
+[rori]
+.mka
+.mkv
+[Pomf]
+[URW]
+_, 
+Ore no Kanojo to Osananajimi ga Shurabasugiru, OreShura
+Ore no Kanojo to Osananajimi ga Shuraba Sugiru - My Girlfriend and Childhood Friend Fight Too Much, OreShura
+ 720p AAC],]

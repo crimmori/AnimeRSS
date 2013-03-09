@@ -1,3 +1,5 @@
+get it from: / AnimeRSS / bin / Debug / AnimeRSS.exe
+
 Hello, thanks for downloading, I will explain the program's feautures and settings here.
 
 Note: it is made to work with nyaa rss feeds, i can not ensure it will work with other ones.

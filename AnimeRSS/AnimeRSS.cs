@@ -106,12 +106,25 @@ namespace AnimeRSS
         {
             string url = feeds[this.FeedsTabs.SelectedIndex].GetItems[((ListBox)sender).SelectedIndex].Url;
 
-            new WebBrowser().Navigate(url);
+            WebBrowser wb = new WebBrowser();
+            wb.FileDownload += new EventHandler(this.wb_FileDownload);
+            wb.Navigate(url);
+            if (download) { wb.Dispose(); }
+        }
+
+        private static bool download = false;
+
+        private void wb_FileDownload(object sender, EventArgs e)
+        {
+            WebBrowser wb = (WebBrowser)sender;
+
+            if (wb.DocumentType == "File") { download = true; }
         }
 
         private void WindowForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveData();
+            notifyIcon1.Visible = false;
             notifyIcon1.Dispose();
         }
 
@@ -130,6 +143,7 @@ namespace AnimeRSS
 
             x.WriteEndElement();
             x.Close();
+            x.Dispose();
 
             XmlWriter s = XmlWriter.Create("Settings.xml");
             s.WriteStartElement("settings");
@@ -152,6 +166,7 @@ namespace AnimeRSS
                 s.WriteElementString("removeOtherMess", removeOtherMess.ToString());
                 s.WriteEndElement();
             s.Close();
+            s.Dispose();
         }
 
         private void LoadData()

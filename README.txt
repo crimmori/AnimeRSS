@@ -6,6 +6,7 @@ Note: it is made to work with nyaa rss feeds, i can not ensure it will work with
 
 if you right click, a menu will pop up, it will show the actions you can take:
 -refresh: refreshes all feeds.
+-search: you can search nyaa torrents here, and download them or open them in the browser.
 -new feed: adds a new feed to the program.
 -delete feed: deletes the current feed.
 -settings: shows the settings menu.

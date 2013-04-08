@@ -72,6 +72,15 @@
     <Compile Include="AnimeRSS.Designer.cs">
       <DependentUpon>AnimeRSS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions.cs" />
+    <Compile Include="ItemInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemInformation.Designer.cs" />
+    <Compile Include="NyaaBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NyaaBrowser.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs">
@@ -83,6 +92,8 @@
     <EmbeddedResource Include="AnimeRSS.resx">
       <DependentUpon>AnimeRSS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ItemInformation.resx" />
+    <EmbeddedResource Include="NyaaBrowser.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

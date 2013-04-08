@@ -14,6 +14,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using NyaaBrowser;
 
 namespace AnimeRSS
 {
@@ -509,6 +510,12 @@ namespace AnimeRSS
                     fi.Title = newTitle;
                 }
             }
+        }
+
+        private void searchNyaaToolStrip_Click(object sender, EventArgs e)
+        {
+            Form nyaa = new NyaaBrowserForm();
+            nyaa.Show(this);
         }
     }
 }

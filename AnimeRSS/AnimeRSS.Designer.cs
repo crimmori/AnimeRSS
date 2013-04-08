@@ -41,6 +41,7 @@
             this.RefreshFeeds = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.itemTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.searchNyaaToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuContextStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             // 
             this.MenuContextStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshStripMenuItem,
+            this.searchNyaaToolStrip,
             this.newFeedToolStripMenuItem,
             this.deleteFeedToolStripMenuItem,
             this.settingsToolStripMenuItem,
@@ -68,47 +70,47 @@
             this.exitToolStripMenuItem});
             this.MenuContextStrip.Name = "MenuContextStrip";
             this.MenuContextStrip.ShowImageMargin = false;
-            this.MenuContextStrip.Size = new System.Drawing.Size(105, 136);
+            this.MenuContextStrip.Size = new System.Drawing.Size(128, 180);
             // 
             // refreshStripMenuItem
             // 
             this.refreshStripMenuItem.Name = "refreshStripMenuItem";
-            this.refreshStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.refreshStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.refreshStripMenuItem.Text = "Refresh";
             this.refreshStripMenuItem.Click += new System.EventHandler(this.refreshStripMenuItem_Click);
             // 
             // newFeedToolStripMenuItem
             // 
             this.newFeedToolStripMenuItem.Name = "newFeedToolStripMenuItem";
-            this.newFeedToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.newFeedToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.newFeedToolStripMenuItem.Text = "New feed";
             this.newFeedToolStripMenuItem.Click += new System.EventHandler(this.newFeedToolStripMenuItem_Click);
             // 
             // deleteFeedToolStripMenuItem
             // 
             this.deleteFeedToolStripMenuItem.Name = "deleteFeedToolStripMenuItem";
-            this.deleteFeedToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.deleteFeedToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.deleteFeedToolStripMenuItem.Text = "Delete feed";
             this.deleteFeedToolStripMenuItem.Click += new System.EventHandler(this.deleteFeedToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // formattingToolStripMenuItem
             // 
             this.formattingToolStripMenuItem.Name = "formattingToolStripMenuItem";
-            this.formattingToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.formattingToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.formattingToolStripMenuItem.Text = "Formatting";
             this.formattingToolStripMenuItem.Click += new System.EventHandler(this.formattingToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -132,6 +134,13 @@
             this.itemTooltip.AutomaticDelay = 100000;
             this.itemTooltip.BackColor = System.Drawing.SystemColors.Control;
             this.itemTooltip.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // searchNyaaToolStrip
+            // 
+            this.searchNyaaToolStrip.Name = "searchNyaaToolStrip";
+            this.searchNyaaToolStrip.Size = new System.Drawing.Size(127, 22);
+            this.searchNyaaToolStrip.Text = "Search Nyaa";
+            this.searchNyaaToolStrip.Click += new System.EventHandler(this.searchNyaaToolStrip_Click);
             // 
             // WindowForm
             // 
@@ -165,6 +174,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteFeedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshStripMenuItem;
         private System.Windows.Forms.ToolTip itemTooltip;
+        private System.Windows.Forms.ToolStripMenuItem searchNyaaToolStrip;
     }
 }
 

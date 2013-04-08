@@ -36,7 +36,7 @@ namespace AnimeRSS
         
         public void ReadFeed(string feedUrl)
         {
-            var feed = from c in XDocument.Load(@url).Descendants("item")
+            var feed = from c in XDocument.Load(@feedUrl).Descendants("item")
                        select new
                        {
                            title = c.Element("title").Value,

@@ -9,7 +9,10 @@
 .mkv
 [Pomf]
 [URW]
+.avi
 _, 
-Ore no Kanojo to Osananajimi ga Shurabasugiru, OreShura
-Ore no Kanojo to Osananajimi ga Shuraba Sugiru - My Girlfriend and Childhood Friend Fight Too Much, OreShura
+Ore no Kanojo to Osananajimi ga Shurabasugiru,OreShura
+Ore no Kanojo to Osananajimi ga Shuraba Sugiru - My Girlfriend and Childhood Friend Fight Too Much,OreShura
  720p AAC],]
+Yahari Ore no Seishun Love Comedy wa Machigatteiru - 
+My Teenage RomCom SNAFU,Yahari Ore no Seishun Love Comedy wa Machigatteiru

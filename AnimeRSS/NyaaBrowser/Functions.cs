@@ -20,29 +20,46 @@ namespace NyaaBrowser
 
         private static List<FeedItem> QueryItems;
 
-        public static List<FeedItem> Search(string query)
+        public static List<FeedItem> Search(string query, string category)
         {
             QueryItems = new List<FeedItem>();
 
-            GetRSS(searchUrlRSS + query);
+            GetRSS(searchUrlRSS + query, category);
 
             return QueryItems;
         }
 
-        private static void GetRSS(string url)
+        private static void GetRSS(string url, string category)
         {
             var rssFeed = from c in XDocument.Load(@url).Descendants("item")
-                          select new
-                          {
-                              title = c.Element("title").Value,
-                              category = c.Element("category").Value,
-                              link = c.Element("link").Value,
-                              guidLink = c.Element("guid").Value,
-                              description = c.Element("description").Value,
-                              pubDate = c.Element("pubDate").Value
-                          };
+                      select new
+                      {
+                          title = c.Element("title").Value,
+                          category = c.Element("category").Value,
+                          link = c.Element("link").Value,
+                          guidLink = c.Element("guid").Value,
+                          description = c.Element("description").Value,
+                          pubDate = c.Element("pubDate").Value
+                      };
 
-            foreach (var item in rssFeed) { QueryItems.Add(new FeedItem(item.title, item.category, item.link, item.guidLink, item.description, item.pubDate)); }
+            if (category == "All categories")
+            {
+                foreach (var item in rssFeed)
+                {
+                    QueryItems.Add(new FeedItem(item.title, item.category, item.link, item.guidLink, item.description, item.pubDate));
+                }
+            }
+            else
+            {
+                foreach (var item in rssFeed)
+                {
+                    if (item.category.Contains(category))
+                    {
+                        QueryItems.Add(new FeedItem(item.title, item.category, item.link, item.guidLink, item.description, item.pubDate));
+                    }
+                }
+            }
+
 
             if (QueryItems.Count > 50)
             {

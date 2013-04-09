@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Web;
 using System.Xml.Linq;
 using System.IO;
-using System.Text;
 
 namespace NyaaBrowser
 {
@@ -21,11 +20,13 @@ namespace NyaaBrowser
         public NyaaBrowserForm()
         {
             InitializeComponent();
+
+            this.categoriesComboBox.SelectedIndex = 0;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            QueryItems = Functions.Search(this.queryInput.Text);
+            QueryItems = Functions.Search(this.queryInput.Text, this.categoriesComboBox.Text);
             this.resultBox.Items.Clear();
             LoadItems();
         }
@@ -59,9 +60,7 @@ namespace NyaaBrowser
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                QueryItems = Functions.Search(this.queryInput.Text);
-                this.resultBox.Items.Clear();
-                LoadItems();
+                searchButton.PerformClick();
             }
         }
     }

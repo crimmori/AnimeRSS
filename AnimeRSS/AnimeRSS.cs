@@ -50,10 +50,26 @@ namespace AnimeRSS
             string feedName = null;
             string feedUrl = null;
 
-            while (feedName == null) { feedName = Interaction.InputBox("Enter feed name."); }
-            while (feedUrl == null)  { feedUrl = Interaction.InputBox("Enter feed url."); }
+            while (feedName == null)
+            {
+                feedName = Interaction.InputBox("Enter feed name.");
+                if (feedName == "") { break; }
+            }
 
-            NewFeed(feedName, feedUrl);
+            if (feedName != "")
+            {
+
+                while (feedUrl == null)
+                {
+                    feedUrl = Interaction.InputBox("Enter feed url.");
+                    if (feedUrl == "") { break; }
+                }
+
+                if (feedName != "" || feedUrl != "")
+                {
+                    NewFeed(feedName, feedUrl);
+                }
+            }
         }
 
         private void NewFeed(string feedName, string feedUrl)
@@ -411,6 +427,17 @@ namespace AnimeRSS
 
         private void formattingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!File.Exists("formatting.txt"))
+            {
+                File.Create("formatting.txt").Close();
+                StreamWriter writer = new StreamWriter("formatting.txt");
+                writer.WriteLine(";Put your formatting strings here.");
+                writer.WriteLine(";Strings entered here will be deleted from the item name.");
+                writer.WriteLine(";To replace a string with another place them on the same line, seperated by ','.");
+                writer.WriteLine(";Example: string,replacement");
+                writer.Close();
+            }
+
             Process.Start("formatting.txt");
         }
 

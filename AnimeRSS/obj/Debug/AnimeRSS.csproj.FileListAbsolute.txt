@@ -35,3 +35,4 @@ C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.S
 C:\Users\Mitchell\Documents\GitHub\blabla\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.csproj.GenerateResource.Cache
 C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.NyaaBrowser.ItemInformation.resources
 C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.NyaaBrowser.NyaaBrowser.resources
+C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.AutoDownloader.AutoDownloader.resources

@@ -116,6 +116,7 @@ namespace AnimeRSS
         private string description;
         private string originalTitle;
         private string resolution;
+        private int episode;
 
         public FeedItem(string title, string url, string date, string description)
         {

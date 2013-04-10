@@ -65,6 +65,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoDownloader\AutoDownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoDownloader\AutoDownloader.Designer.cs">
+      <DependentUpon>AutoDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoDownloader\RssDownload.cs" />
     <Compile Include="Feed.cs" />
     <Compile Include="AnimeRSS.cs">
       <SubType>Form</SubType>
@@ -73,9 +80,13 @@
       <DependentUpon>AnimeRSS.cs</DependentUpon>
     </Compile>
     <Compile Include="NyaaBrowser\Functions.cs" />
-    <Compile Include="NyaaBrowser\ItemInformation.cs" />
+    <Compile Include="NyaaBrowser\ItemInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NyaaBrowser\ItemInformation.Designer.cs" />
-    <Compile Include="NyaaBrowser\NyaaBrowser.cs" />
+    <Compile Include="NyaaBrowser\NyaaBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NyaaBrowser\NyaaBrowser.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="AnimeRSS.resx">
       <DependentUpon>AnimeRSS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoDownloader\AutoDownloader.resx">
+      <DependentUpon>AutoDownloader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NyaaBrowser\ItemInformation.resx" />
     <EmbeddedResource Include="NyaaBrowser\NyaaBrowser.resx" />

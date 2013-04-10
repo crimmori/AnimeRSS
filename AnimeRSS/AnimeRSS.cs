@@ -15,6 +15,7 @@ using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 using NyaaBrowser;
+using AnimeRSS.AutoDownloader;
 
 namespace AnimeRSS
 {
@@ -22,6 +23,7 @@ namespace AnimeRSS
     {
         public static List<Feed> feeds = new List<Feed>();
         public static ArrayList listViews = new ArrayList();
+        public static List<RssDownload> rssDownloads = new List<RssDownload>();
 
         public static bool formattingEnabled;
         public static bool hashHidingEnabled;
@@ -129,6 +131,28 @@ namespace AnimeRSS
             notifyIcon1.Dispose();
         }
 
+        private void SaveRssDownloaderData()
+        {
+            XmlWriter x = XmlWriter.Create("AutoDownloadSaveData.xml");
+            x.WriteStartElement("savedata");
+
+            foreach (RssDownload rd in rssDownloads)
+            {
+                x.WriteStartElement("item");
+                x.WriteElementString("title", rd.title);
+                x.WriteElementString("resolution", rd.resolution);
+                x.WriteElementString("epFrom", rd.epFrom.ToString());
+                x.WriteElementString("epTo", rd.epTo.ToString());
+                x.WriteElementString("lastDownloadedEp", rd.lastDownloadedEp.ToString());
+                x.WriteElementString("feed", rd.feed.Name);
+                x.WriteEndElement();
+            }
+
+            x.WriteEndElement();
+            x.Close();
+            x.Dispose();
+        }
+
         private void SaveData()
         {
             XmlWriter x = XmlWriter.Create("SaveData.xml");
@@ -168,6 +192,8 @@ namespace AnimeRSS
                 s.WriteEndElement();
             s.Close();
             s.Dispose();
+
+            SaveRssDownloaderData();
         }
 
         private void LoadData()
@@ -239,6 +265,31 @@ namespace AnimeRSS
                     removeOtherMess = Convert.ToBoolean(item.removeMess);
                 }              
             }
+
+            if (File.Exists("AutoDownloadSaveData.xml"))
+            {
+                var autoDownloader = from x in XDocument.Load("AutoDownloadSaveData.xml").Descendants("item")
+                                     select new
+                                     {
+                                         title = x.Element("title").Value,
+                                         resolution = x.Element("resolution").Value,
+                                         epFrom = x.Element("epFrom").Value,
+                                         epTo = x.Element("epTo").Value,
+                                         lastDownloadedEp = x.Element("lastDownloadedEp").Value,
+                                         feed = x.Element("feed").Value
+                                     };
+
+                foreach (var item in autoDownloader)
+                {
+                    rssDownloads.Add(new RssDownload(   item.title, 
+                                                        item.resolution, 
+                                                        Convert.ToInt32(item.epFrom), 
+                                                        Convert.ToInt32(item.epTo), 
+                                                        item.feed, 
+                                                        Convert.ToInt32(item.lastDownloadedEp)
+                                                        ));
+                }
+            }
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -265,6 +316,8 @@ namespace AnimeRSS
             }
 
             ChangeFontColor();
+
+            foreach (RssDownload rd in rssDownloads) { rd.CheckItems(); }
         }
 
         private void CheckSettings()
@@ -516,6 +569,12 @@ namespace AnimeRSS
         {
             Form nyaa = new NyaaBrowserForm();
             nyaa.Show(this);
+        }
+
+        private void autoDownloaderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form downloader = new AutoDownloader.AutoDownloader();
+            downloader.Show();
         }
     }
 }

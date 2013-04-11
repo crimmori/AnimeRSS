@@ -33,7 +33,7 @@ namespace AnimeRSS
         {
             get { return this.url; }
         }
-        
+
         public void ReadFeed(string feedUrl)
         {
             var feed = from c in XDocument.Load(@feedUrl).Descendants("item")
@@ -48,6 +48,7 @@ namespace AnimeRSS
             foreach (var item in feed) { feedItems.Add(new FeedItem(item.title, item.downloadUrl, item.date, item.description)); }
 
             SetResolution();
+
         }
 
         public void RefreshFeed()

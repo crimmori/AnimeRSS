@@ -94,5 +94,11 @@ namespace AnimeRSS
         {
             WindowForm.removeOtherMess = this.removeMess.Checked;
         }
+
+        private void backGroundColorSetting_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog(this);
+            WindowForm.customBGColor = colorDialog1.Color;
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.removeLowresSetting = new System.Windows.Forms.CheckBox();
             this.toolTipSetting = new System.Windows.Forms.CheckBox();
             this.removeMess = new System.Windows.Forms.CheckBox();
+            this.backGroundColorSetting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.formattingSetting.AutoSize = true;
             this.formattingSetting.Location = new System.Drawing.Point(12, 12);
             this.formattingSetting.Name = "formattingSetting";
-            this.formattingSetting.Size = new System.Drawing.Size(72, 17);
+            this.formattingSetting.Size = new System.Drawing.Size(75, 17);
             this.formattingSetting.TabIndex = 0;
             this.formattingSetting.Text = "Formatting";
             this.formattingSetting.UseVisualStyleBackColor = true;
@@ -62,7 +63,7 @@
             this.hashSetting.AutoSize = true;
             this.hashSetting.Location = new System.Drawing.Point(12, 35);
             this.hashSetting.Name = "hashSetting";
-            this.hashSetting.Size = new System.Drawing.Size(117, 17);
+            this.hashSetting.Size = new System.Drawing.Size(120, 17);
             this.hashSetting.TabIndex = 1;
             this.hashSetting.Text = "CRC32(hash) hiding";
             this.hashSetting.UseVisualStyleBackColor = true;
@@ -73,7 +74,7 @@
             this.daySetting.AutoSize = true;
             this.daySetting.Location = new System.Drawing.Point(12, 58);
             this.daySetting.Name = "daySetting";
-            this.daySetting.Size = new System.Drawing.Size(118, 17);
+            this.daySetting.Size = new System.Drawing.Size(121, 17);
             this.daySetting.TabIndex = 2;
             this.daySetting.Text = "Prefix items with day";
             this.daySetting.UseVisualStyleBackColor = true;
@@ -101,7 +102,7 @@
             this.showOnTaskbarSetting.AutoSize = true;
             this.showOnTaskbarSetting.Location = new System.Drawing.Point(12, 94);
             this.showOnTaskbarSetting.Name = "showOnTaskbarSetting";
-            this.showOnTaskbarSetting.Size = new System.Drawing.Size(103, 17);
+            this.showOnTaskbarSetting.Size = new System.Drawing.Size(106, 17);
             this.showOnTaskbarSetting.TabIndex = 5;
             this.showOnTaskbarSetting.Text = "Show on taskbar";
             this.showOnTaskbarSetting.UseVisualStyleBackColor = true;
@@ -115,7 +116,7 @@
             this.fontButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
             this.fontButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.fontButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fontButton.Location = new System.Drawing.Point(109, 214);
+            this.fontButton.Location = new System.Drawing.Point(109, 247);
             this.fontButton.Name = "fontButton";
             this.fontButton.Size = new System.Drawing.Size(71, 23);
             this.fontButton.TabIndex = 6;
@@ -130,7 +131,7 @@
             this.fontSetting.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
             this.fontSetting.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.fontSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fontSetting.Location = new System.Drawing.Point(28, 214);
+            this.fontSetting.Location = new System.Drawing.Point(28, 247);
             this.fontSetting.Name = "fontSetting";
             this.fontSetting.Size = new System.Drawing.Size(75, 23);
             this.fontSetting.TabIndex = 7;
@@ -175,7 +176,7 @@
             this.removeLowresSetting.AutoSize = true;
             this.removeLowresSetting.Location = new System.Drawing.Point(12, 138);
             this.removeLowresSetting.Name = "removeLowresSetting";
-            this.removeLowresSetting.Size = new System.Drawing.Size(177, 17);
+            this.removeLowresSetting.Size = new System.Drawing.Size(180, 17);
             this.removeLowresSetting.TabIndex = 10;
             this.removeLowresSetting.Text = "Remove lowres (360p and 480p)";
             this.removeLowresSetting.UseVisualStyleBackColor = true;
@@ -186,7 +187,7 @@
             this.toolTipSetting.AutoSize = true;
             this.toolTipSetting.Location = new System.Drawing.Point(12, 161);
             this.toolTipSetting.Name = "toolTipSetting";
-            this.toolTipSetting.Size = new System.Drawing.Size(105, 17);
+            this.toolTipSetting.Size = new System.Drawing.Size(108, 17);
             this.toolTipSetting.TabIndex = 11;
             this.toolTipSetting.Text = "Show info bubble";
             this.toolTipSetting.UseVisualStyleBackColor = true;
@@ -197,17 +198,28 @@
             this.removeMess.AutoSize = true;
             this.removeMess.Location = new System.Drawing.Point(12, 184);
             this.removeMess.Name = "removeMess";
-            this.removeMess.Size = new System.Drawing.Size(139, 17);
+            this.removeMess.Size = new System.Drawing.Size(142, 17);
             this.removeMess.TabIndex = 12;
             this.removeMess.Text = "Remove all \"[text]\" mess";
             this.removeMess.UseVisualStyleBackColor = true;
             this.removeMess.CheckedChanged += new System.EventHandler(this.removeMess_CheckedChanged);
             // 
+            // backGroundColorSetting
+            // 
+            this.backGroundColorSetting.Location = new System.Drawing.Point(109, 218);
+            this.backGroundColorSetting.Name = "backGroundColorSetting";
+            this.backGroundColorSetting.Size = new System.Drawing.Size(71, 23);
+            this.backGroundColorSetting.TabIndex = 13;
+            this.backGroundColorSetting.Text = "BG color";
+            this.backGroundColorSetting.UseVisualStyleBackColor = true;
+            this.backGroundColorSetting.Click += new System.EventHandler(this.backGroundColorSetting_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(192, 245);
+            this.ClientSize = new System.Drawing.Size(192, 278);
+            this.Controls.Add(this.backGroundColorSetting);
             this.Controls.Add(this.removeMess);
             this.Controls.Add(this.toolTipSetting);
             this.Controls.Add(this.removeLowresSetting);
@@ -255,6 +267,7 @@
         private System.Windows.Forms.CheckBox removeLowresSetting;
         private System.Windows.Forms.CheckBox toolTipSetting;
         private System.Windows.Forms.CheckBox removeMess;
+        private System.Windows.Forms.Button backGroundColorSetting;
 
     }
 }

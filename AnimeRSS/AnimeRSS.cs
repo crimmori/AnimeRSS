@@ -31,6 +31,7 @@ namespace AnimeRSS
         public static int refreshRate;
         public static bool showOnTaskbar;
         public static Color customFontColor = SystemColors.ControlText;
+        public static Color customBGColor = SystemColors.Control;
         public static Font customFont = DefaultFont;
         public static int maxItems = 30;
         public static bool removeLowres = false;
@@ -85,6 +86,7 @@ namespace AnimeRSS
             newList.Dock = DockStyle.Fill;
             newList.BorderStyle = BorderStyle.None;
             newList.MouseMove += newList_MouseMove;
+            newList.BackColor = customBGColor;
 
             newTab.Controls.Add(newList);
 
@@ -199,6 +201,12 @@ namespace AnimeRSS
                     s.WriteElementString("g", customFontColor.G.ToString());
                     s.WriteElementString("b", customFontColor.B.ToString());
                 s.WriteEndElement();
+                s.WriteStartElement("bgColor");
+                    s.WriteElementString("a", customFontColor.A.ToString());
+                    s.WriteElementString("r", customFontColor.R.ToString());
+                    s.WriteElementString("g", customFontColor.G.ToString());
+                    s.WriteElementString("b", customFontColor.B.ToString());
+                s.WriteEndElement();
                 s.WriteElementString("font", customFont.FontFamily.Name);
                 s.WriteElementString("fontSize", Convert.ToString(customFont.Size));
                 s.WriteElementString("maxItems", Convert.ToString(maxItems));
@@ -254,6 +262,10 @@ namespace AnimeRSS
                                    fontColorR = x.Element("fontColor").Element("r").Value,
                                    fontColorG = x.Element("fontColor").Element("g").Value,
                                    fontColorB = x.Element("fontColor").Element("b").Value,
+                                   bgColorA = x.Element("bgColor").Element("a").Value,
+                                   bgColorR = x.Element("bgColor").Element("r").Value,
+                                   bgColorG = x.Element("bgColor").Element("g").Value,
+                                   bgColorB = x.Element("bgColor").Element("b").Value,
                                    font = x.Element("font").Value,
                                    fontSize = x.Element("fontSize").Value,
                                    maxItems = x.Element("maxItems").Value,
@@ -274,6 +286,11 @@ namespace AnimeRSS
                         Convert.ToInt32(item.fontColorR), 
                         Convert.ToInt32(item.fontColorG), 
                         Convert.ToInt32(item.fontColorB));
+                    customBGColor = Color.FromArgb(
+                        Convert.ToInt32(item.bgColorA),
+                        Convert.ToInt32(item.bgColorR),
+                        Convert.ToInt32(item.bgColorG),
+                        Convert.ToInt32(item.bgColorB));
                     customFont = new Font(item.font, (float)Convert.ToDecimal(item.fontSize));
                     maxItems = Convert.ToInt32(item.maxItems);
                     removeLowres = Convert.ToBoolean(item.removeLowres);
@@ -483,7 +500,7 @@ namespace AnimeRSS
             foreach (ListBox i in listViews)
             {
                 i.ForeColor = customFontColor;
-
+                i.BackColor = customBGColor;
             }
 
             foreach (TabPage t in FeedsTabs.TabPages)

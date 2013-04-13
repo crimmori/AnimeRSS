@@ -44,6 +44,7 @@
             this.toolTipSetting = new System.Windows.Forms.CheckBox();
             this.removeMess = new System.Windows.Forms.CheckBox();
             this.backGroundColorSetting = new System.Windows.Forms.Button();
+            this.colorDialog2 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -268,6 +269,7 @@
         private System.Windows.Forms.CheckBox toolTipSetting;
         private System.Windows.Forms.CheckBox removeMess;
         private System.Windows.Forms.Button backGroundColorSetting;
+        private System.Windows.Forms.ColorDialog colorDialog2;
 
     }
 }

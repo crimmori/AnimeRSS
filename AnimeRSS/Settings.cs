@@ -97,8 +97,8 @@ namespace AnimeRSS
 
         private void backGroundColorSetting_Click(object sender, EventArgs e)
         {
-            colorDialog1.ShowDialog(this);
-            WindowForm.customBGColor = colorDialog1.Color;
+            colorDialog2.ShowDialog(this);
+            WindowForm.customBGColor = colorDialog2.Color;
         }
     }
 }

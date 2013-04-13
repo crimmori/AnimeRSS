@@ -130,7 +130,7 @@ namespace AnimeRSS
             WebBrowser wb = new WebBrowser();
             wb.FileDownload += new EventHandler(this.wb_FileDownload);
             wb.Navigate(url);
-            if (download) { wb.Dispose(); }
+            if (download) { wb.Dispose(); download = false; }
         }
 
         private static bool download = false;
@@ -202,10 +202,10 @@ namespace AnimeRSS
                     s.WriteElementString("b", customFontColor.B.ToString());
                 s.WriteEndElement();
                 s.WriteStartElement("bgColor");
-                    s.WriteElementString("a", customFontColor.A.ToString());
-                    s.WriteElementString("r", customFontColor.R.ToString());
-                    s.WriteElementString("g", customFontColor.G.ToString());
-                    s.WriteElementString("b", customFontColor.B.ToString());
+                    s.WriteElementString("a", customBGColor.A.ToString());
+                    s.WriteElementString("r", customBGColor.R.ToString());
+                    s.WriteElementString("g", customBGColor.G.ToString());
+                    s.WriteElementString("b", customBGColor.B.ToString());
                 s.WriteEndElement();
                 s.WriteElementString("font", customFont.FontFamily.Name);
                 s.WriteElementString("fontSize", Convert.ToString(customFont.Size));

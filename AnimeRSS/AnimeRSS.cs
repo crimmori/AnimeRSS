@@ -66,7 +66,7 @@ namespace AnimeRSS
                     if (feedUrl == "") { break; }
                 }
 
-                if (feedName != "" || feedUrl != "")
+                if (feedName != "" && feedUrl != "")
                 {
                     NewFeed(feedName, feedUrl);
                 }

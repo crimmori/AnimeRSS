@@ -38,11 +38,11 @@
             this.deleteFeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formattingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoDownloaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RefreshFeeds = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.itemTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.autoDownloaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuContextStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             this.exitToolStripMenuItem});
             this.MenuContextStrip.Name = "MenuContextStrip";
             this.MenuContextStrip.ShowImageMargin = false;
-            this.MenuContextStrip.Size = new System.Drawing.Size(132, 202);
+            this.MenuContextStrip.Size = new System.Drawing.Size(132, 180);
             // 
             // refreshStripMenuItem
             // 
@@ -116,6 +116,13 @@
             this.formattingToolStripMenuItem.Text = "Formatting";
             this.formattingToolStripMenuItem.Click += new System.EventHandler(this.formattingToolStripMenuItem_Click);
             // 
+            // autoDownloaderToolStripMenuItem
+            // 
+            this.autoDownloaderToolStripMenuItem.Name = "autoDownloaderToolStripMenuItem";
+            this.autoDownloaderToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.autoDownloaderToolStripMenuItem.Text = "Auto Downloader";
+            this.autoDownloaderToolStripMenuItem.Click += new System.EventHandler(this.autoDownloaderToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -140,16 +147,12 @@
             // 
             // itemTooltip
             // 
-            this.itemTooltip.AutomaticDelay = 100000;
+            this.itemTooltip.AutomaticDelay = 60;
+            this.itemTooltip.AutoPopDelay = 60;
             this.itemTooltip.BackColor = System.Drawing.SystemColors.Control;
+            this.itemTooltip.InitialDelay = 60;
+            this.itemTooltip.ReshowDelay = 12;
             this.itemTooltip.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
-            // 
-            // autoDownloaderToolStripMenuItem
-            // 
-            this.autoDownloaderToolStripMenuItem.Name = "autoDownloaderToolStripMenuItem";
-            this.autoDownloaderToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.autoDownloaderToolStripMenuItem.Text = "Auto Downloader";
-            this.autoDownloaderToolStripMenuItem.Click += new System.EventHandler(this.autoDownloaderToolStripMenuItem_Click);
             // 
             // WindowForm
             // 

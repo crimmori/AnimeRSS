@@ -12,7 +12,6 @@ C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.exe
 C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.pdb
 C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\bin\Debug\AnimeRSS.exe
 C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\bin\Debug\AnimeRSS.pdb
-C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.csprojResolveAssemblyReference.cache
 C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.WindowForm.resources
 C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.Properties.Resources.resources
 C:\Users\Mitchell\Documents\GitHub\AnimeRSS\AnimeRSS\obj\Debug\AnimeRSS.Settings.resources

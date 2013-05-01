@@ -86,6 +86,7 @@ namespace AnimeRSS
             newList.Dock = DockStyle.Fill;
             newList.BorderStyle = BorderStyle.None;
             newList.MouseMove += newList_MouseMove;
+            newList.MouseHover += newList_MouseHover;
             newList.BackColor = customBGColor;
 
             newTab.Controls.Add(newList);
@@ -95,15 +96,14 @@ namespace AnimeRSS
             listViews.Add(newList);
         }
 
-        void newList_MouseMove(object sender, MouseEventArgs e)
+        void newList_MouseHover(object sender, EventArgs e)
         {
             if (showToolTip)
             {
                 if (sender is ListBox)
                 {
                     ListBox lb = (ListBox)sender;
-                    Point p = new Point(e.X, e.Y);
-                    int hoverIndex = lb.IndexFromPoint(p);
+                    int hoverIndex = lb.IndexFromPoint(new Point(hoveredItem.X, hoveredItem.Y));
                     if (hoverIndex >= 0 && hoverIndex < lb.Items.Count)
                     {
                         Feed currentFeed;
@@ -113,16 +113,30 @@ namespace AnimeRSS
                         currentFeedItem = currentFeed.GetItems[hoverIndex];
 
 
-                        itemTooltip.AutomaticDelay = 600000000;
-                        itemTooltip.ReshowDelay = 600000000;
-                        itemTooltip.InitialDelay = 600000000;
-                        itemTooltip.ReshowDelay = 60000000;
-                        itemTooltip.SetToolTip(lb, currentFeedItem.Description);
+                        itemTooltip.AutomaticDelay = 0;
+                        itemTooltip.ReshowDelay = 0;
+                        itemTooltip.InitialDelay = 0;
+                        itemTooltip.SetToolTip(lb, currentFeedItem.OriginalTitle + " | " + currentFeedItem.Description);
                     }
                 }
             }
         }
 
+        static public Point hoveredItem = new Point(0, 0);
+        
+        void newList_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (showToolTip)
+            {
+                if (sender is ListBox)
+                {
+                    ListBox lb = (ListBox)sender;
+                    Point p = new Point(e.X, e.Y);
+                    hoveredItem = p;
+                }
+            }
+        }
+        
         private void newList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string url = feeds[this.FeedsTabs.SelectedIndex].GetItems[((ListBox)sender).SelectedIndex].Url;
